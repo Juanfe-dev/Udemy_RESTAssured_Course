@@ -3,7 +3,7 @@ package com.herokuapp.restfullbooker;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
-public class HealthCheckTest {
+public class HealthCheckTests {
 
 
     @Test
@@ -15,5 +15,4 @@ public class HealthCheckTest {
             .assertThat()
             .statusCode(201);
     }
-
 }
