@@ -21,7 +21,7 @@ public class UpdateBookingTests extends BaseTest {
         //Get booking of the new booking
         int bookingid = responseCreate.jsonPath().getInt("bookingid");
 
-        //Update booking
+        //Create JSON Body
         JSONObject body = new JSONObject();
         body.put("firstname", "Amalia");
         body.put("lastname", "Arboleda");
@@ -35,15 +35,23 @@ public class UpdateBookingTests extends BaseTest {
 
         body.put("additionalneeds","Hamburguers");
 
+        //Update booking
         //Change post for put
+        //Autorization
+        //    "username" : "admin",
+        //    "password" : "password123"
+        //Add .auth().preemptive().basic(username, password) for authentication
         Response responseUpdate = RestAssured
-                .given()
+                .given().auth().preemptive().basic("admin","password123")
                 .contentType(ContentType.JSON)
                 .body(body.toString()) //We have to convert to string first
                 //.post("https://restful-booker.herokuapp.com/booking");
                 .put("https://restful-booker.herokuapp.com/booking/"+bookingid);
 
         responseUpdate.print();
+
+
+
 
         Assert.assertEquals(responseUpdate.getStatusCode(), 200, "Expected 200 but it is not");
 
