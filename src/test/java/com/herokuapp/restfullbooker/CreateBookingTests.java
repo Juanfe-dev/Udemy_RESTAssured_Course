@@ -14,9 +14,7 @@ public class CreateBookingTests extends BaseTest {
     @Test
     public void createBookintTest(){
 
-        //Create Json Body
-        //Import dependency Json in java
-
+        //Create Json Body -> Create a booking
         Response response = createBooking();
 
         response.print();

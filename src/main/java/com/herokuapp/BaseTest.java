@@ -8,6 +8,8 @@ import org.json.JSONObject;
 public class BaseTest {
 
     protected Response createBooking() {
+        //Import dependency Json in java
+
         /* EXAMPLE:
             "firstname" : "Jim",
             "lastname" : "Brown",
@@ -39,7 +41,7 @@ public class BaseTest {
                 .contentType(ContentType.JSON)
                 .body(body.toString()) //We have to convert to string first
                 .post("https://restful-booker.herokuapp.com/booking");
-        return response;
+                return response;
 
     }
 }
