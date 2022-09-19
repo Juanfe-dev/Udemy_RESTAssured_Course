@@ -14,7 +14,7 @@ public class GetBookingIdTests extends BaseTest {
     public void getBookingIdsWithoutFilterTest(){
 
         // Get response with booking ids
-        Response response = RestAssured.given(spec).get("/booking");
+        Response response = RestAssured.given(spec).get("/booking/5");
         response.print();
         // Verify response 200
         Assert.assertEquals(response.getStatusCode(),
