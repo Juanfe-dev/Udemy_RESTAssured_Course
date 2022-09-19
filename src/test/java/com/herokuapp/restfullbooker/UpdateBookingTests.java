@@ -33,7 +33,7 @@ public class UpdateBookingTests extends BaseTest {
         bookingdates.put("checkout", "2022-09-20");
         body.put("bookingdates", bookingdates);
 
-        body.put("additionalneeds","Hamburguers");
+        body.put("additionalneeds","Avocado");
 
         //Update booking
         //Change post for put
@@ -76,6 +76,10 @@ public class UpdateBookingTests extends BaseTest {
 
         String actualCheckout = responseUpdate.jsonPath().getString("bookingdates.checkout");
         softAssert.assertEquals(actualCheckout, "2022-09-20", "checkout in response is not expected");
+
+        String actualAdditionalNeeds = responseUpdate.jsonPath().getString("additionalneeds");
+        softAssert.assertEquals(actualAdditionalNeeds, "Avocado", "additional needs in response is not expected");
+
 
         softAssert.assertAll();
 
