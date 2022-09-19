@@ -1,6 +1,6 @@
 package com.herokuapp.restfullbooker;
 
-import com.herokuapp.BaseTest;
+import com.herokuapp.restfulbooker.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;

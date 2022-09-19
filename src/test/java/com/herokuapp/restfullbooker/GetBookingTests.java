@@ -1,6 +1,6 @@
 package com.herokuapp.restfullbooker;
 
-import com.herokuapp.BaseTest;
+import com.herokuapp.restfulbooker.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
@@ -33,7 +33,7 @@ public class GetBookingTests extends BaseTest {
                 "Morante Briones",
                 "The lastname should be 'Morante Briones' but it is not");
     }*/
-    @Test (enabled = false)
+    @Test (enabled = true)
     public void getBookingTests(){
 
         /*

@@ -1,4 +1,4 @@
-package com.herokuapp;
+package com.herokuapp.restfulbooker;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;

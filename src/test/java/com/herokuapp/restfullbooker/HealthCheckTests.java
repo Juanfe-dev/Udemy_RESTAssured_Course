@@ -1,6 +1,6 @@
 package com.herokuapp.restfullbooker;
 
-import com.herokuapp.BaseTest;
+import com.herokuapp.restfulbooker.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.http.Cookie;
 import io.restassured.http.Cookies;
