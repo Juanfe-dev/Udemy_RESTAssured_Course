@@ -47,7 +47,7 @@ public class GetBookingTests extends BaseTest {
         //Create Json Body -> Create a booking
         Response responseCreate = createBooking();
         responseCreate.print();
-        
+
         // Get response with booking
         //int bookingid = responseCreate.jsonPath().getInt("bookingid");
         //  - - - - - - - - - - - - - - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
