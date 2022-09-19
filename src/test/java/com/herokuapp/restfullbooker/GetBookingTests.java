@@ -1,15 +1,15 @@
 package com.herokuapp.restfullbooker;
 
+import com.herokuapp.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 
-public class GetBookingTests {
+public class GetBookingTests extends BaseTest {
 
-    @Test //CHAPTER 11 HOMEWORK
+    //CHAPTER 11 HOMEWORK
+    /* @Test
      public void getBookingNameAndLastName(){
 
         // Get response from GetBooking
@@ -29,10 +29,24 @@ public class GetBookingTests {
         Assert.assertEquals(response.jsonPath().getString("lastname"),
                 "Morante Briones",
                 "The lastname should be 'Morante Briones' but it is not");
-    }
+    }*/
     @Test
     public void getBookingTests(){
-        // Get response with booking
+
+        /*
+
+        //We will create a unique method to build this for all methods in BaseTest
+        RequestSpecification spec = new RequestSpecBuilder()
+                .setBaseUri("https://restful-booker.herokuapp.com")
+                .build();
+        */
+
+        Response response = RestAssured.given(spec).get("/booking/5");
+        response.print();
+
+
+
+        /*// Get response with booking
         Response response = RestAssured.get("https://restful-booker.herokuapp.com/booking/210");
         response.print();
         //Verify response 200
@@ -60,8 +74,8 @@ public class GetBookingTests {
 
         softAssert.assertAll();
 
-        /*
-        {
+        *//* CHAPTER 11 */
+        /*{
             "firstname":"Howard",
             "lastname":"Morante Briones",
             "totalprice":111,
@@ -72,7 +86,7 @@ public class GetBookingTests {
                     "checkout":"2019-01-01"
                 },
             "additionalneeds":"Breakfast"
-        }
-         */
+        }*/
+
     }
 }

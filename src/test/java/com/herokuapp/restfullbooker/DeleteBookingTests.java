@@ -25,11 +25,11 @@ public class DeleteBookingTests extends BaseTest {
         //    "password" : "password123"
         //Add .auth().preemptive().basic(username, password) for authentication
         Response responsePartialUpdate = RestAssured
-                .given().auth().preemptive().basic("admin","password123")
+                .given(spec).auth().preemptive().basic("admin","password123")
                 //.post("https://restful-booker.herokuapp.com/booking");
                 //.put("https://restful-booker.herokuapp.com/booking/"+bookingid);
                 //.patch("https://restful-booker.herokuapp.com/booking/"+bookingid);
-                .delete("https://restful-booker.herokuapp.com/booking/"+bookingid);
+                .delete("/booking/"+bookingid);
         responsePartialUpdate.print();
 
         //Verifications

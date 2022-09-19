@@ -39,12 +39,12 @@ public class PartialUpdateBookingTests extends BaseTest {
         //    "password" : "password123"
         //Add .auth().preemptive().basic(username, password) for authentication
         Response responsePartialUpdate = RestAssured
-                .given().auth().preemptive().basic("admin","password123")
+                .given(spec).auth().preemptive().basic("admin","password123")
                 .contentType(ContentType.JSON)
                 .body(body.toString())//We have to convert to string first
                 //.post("https://restful-booker.herokuapp.com/booking");
                 //.put("https://restful-booker.herokuapp.com/booking/"+bookingid);
-                .patch("https://restful-booker.herokuapp.com/booking/"+bookingid);
+                .patch("/booking/"+bookingid);
         responsePartialUpdate.print();
 
         Assert.assertEquals(responsePartialUpdate.getStatusCode(), 200, "Expected 200 but it is not");

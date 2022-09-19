@@ -42,11 +42,11 @@ public class UpdateBookingTests extends BaseTest {
         //    "password" : "password123"
         //Add .auth().preemptive().basic(username, password) for authentication
         Response responseUpdate = RestAssured
-                .given().auth().preemptive().basic("admin","password123")
+                .given(spec).auth().preemptive().basic("admin","password123")
                 .contentType(ContentType.JSON)
                 .body(body.toString()) //We have to convert to string first
                 //.post("https://restful-booker.herokuapp.com/booking");
-                .put("https://restful-booker.herokuapp.com/booking/"+bookingid);
+                .put("/booking/"+bookingid);
 
         responseUpdate.print();
 

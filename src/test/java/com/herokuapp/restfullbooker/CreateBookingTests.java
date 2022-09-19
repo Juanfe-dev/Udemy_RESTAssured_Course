@@ -14,10 +14,26 @@ public class CreateBookingTests extends BaseTest {
     @Test
     public void createBookintTest(){
 
-        //Create Json Body -> Create a booking
-        Response response = createBooking();
+        JSONObject body = new JSONObject();
+        body.put("firstname", "Juan Felipe");
+        body.put("lastname", "Gomez Arboleda");
+        body.put("totalprice", 6969);
+        body.put("depositpaid", false);
 
-        response.print();
+        JSONObject bookingdates = new JSONObject();
+        bookingdates.put("checkin", "2022-09-15");
+        bookingdates.put("checkout", "2022-09-20");
+        body.put("bookingdates", bookingdates);
+
+        body.put("additionalneeds","Hamburguers");
+
+
+        //Get response
+        Response response = RestAssured
+                .given(spec)
+                .contentType(ContentType.JSON)
+                .body(body.toString()) //We have to convert to string first
+                .post("/booking");
 
         Assert.assertEquals(response.getStatusCode(), 200, "Expected 200 but it is not");
 
