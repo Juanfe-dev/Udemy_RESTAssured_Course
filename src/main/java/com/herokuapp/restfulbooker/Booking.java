@@ -25,13 +25,16 @@ public class Booking {
     private String additionalneeds;
 
     //Constructor
-    public Booking(String firstname, String lastname, int totalprice, Boolean depositpaid, Bookingdates bookingdates, String additionalneed) {
+    public Booking(String firstname, String lastname, int totalprice, Boolean depositpaid, Bookingdates bookingdates, String additionalneeds) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
         this.depositpaid = depositpaid;
         this.bookingdates = bookingdates;
-        this.additionalneeds = additionalneed;
+        this.additionalneeds = additionalneeds;
+    }
+    //Empty Constructor
+    public Booking(){
     }
 
     //Setters and Getters

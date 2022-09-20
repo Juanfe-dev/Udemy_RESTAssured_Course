@@ -10,6 +10,10 @@ public class Bookingdates {
         this.checkin = checkin;
         this.checkout = checkout;
     }
+    //Empty Constructor
+    public Bookingdates() {}
+
+
     //Getters and Setters
     public String getCheckin() {
         return checkin;
